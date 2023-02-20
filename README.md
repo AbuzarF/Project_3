@@ -10,12 +10,19 @@ Used various libraries to retrieve and analyze financial data from the Alpaca AP
 Imports the following libraries:
 
 -alpaca_trade_api: This is the library used to access the Alpaca API to retrieve financial data.
+
 -pandas: This is a library used for data manipulation and analysis.
+
 -matplotlib.pyplot: This is a library used for data visualization.
+
 -seaborn: This is a library used for data visualization.
+
 -yfinance: This is a library used to access Yahoo Finance to retrieve financial data.
+
 -hvplot.pandas: This is a library used for interactive data visualization.
+
 -Connect to Alpaca API: The code connects to the Alpaca API using the user's API key and secret.
+
 
 ### Set Ticker and Time Frame:
 
@@ -38,27 +45,44 @@ Converts the retrieved data to a Pandas DataFrame.
 Calculated several technical indicators for the data and creates new columns in the DataFrame to represent the results of the calculations. The technical indicators calculated include:
 
 -HH21: This is the highest high of the last 21 days.
+
 -LL21: This is the lowest low of the last 21 days.
+
 -50Pct: This is 50% of the difference between HH21 and LL21.
+
 -61Pct: This is 61.5% of the difference between HH21 and LL21.
+
 -50R: This is the ratio of the close price to 50Pct.
+
 -61R: This is the ratio of the close price to 61Pct.
+
 -Mid: This is the average of the high and low prices.
+
 -3dH: This is the difference between the highest high of the next 3 days and the close price (shifted by 3 days).
+
 -3dL: This is the difference between the close price and the lowest low of the next 3 days (shifted by 3 days).
+
 -RewardRisk: This is the ratio of 3dH to 3dL.
+
 -CPctile: This is the percentile of the close price within the range of the high and low prices.
+
 -OPctile: This is the percentile of the open price within the range of the high and low prices.
+
 -Range: This is the difference between the high and low prices.
+
 -RangeT: This is the standardized difference between the high and low prices over the last 30 days.
+
 
 ### Data Preprocessing:
 
 Performed several preprocessing steps on the DataFrame, including:
 
 -Computing the percent change of the close price and the mid price.
+
 -Setting the target close price to the percent change of the close price.
+
 -Removing columns for the open price, high price, low price, volume, trade count, volume weighted average price (vwap), 3dH, 3dL, and Range.
+
 
 ### Add Signal Column:
 
@@ -75,14 +99,21 @@ Finally, the DataFrame df is returned with the updated columns.
 ### Data exploration and analysis:
 
 -The first line of the code gets the column names of a DataFrame 'df' and assigns them to a list variable 'lstColumns'.
+
 -The second line displays the list of column names using the 'display()' function.
+
 -The third line creates an empty DataFrame called 'dfopt'.
 
-The next block of code is a 'for' loop that iterates through each column in 'lstColumns'.
-Within the loop, the 'hvplot.scatter()' function is used to create a scatter plot of the column against the 'FutureSlope' column.
-The 'dfopt' DataFrame is then assigned with two columns - 'FutureSlope' and the current column from 'lstColumns'.
-The correlation between these two columns is calculated using the 'corr()' method and is displayed using the 'display()' function.
-The code essentially generates scatter plots and correlation values for each column in the DataFrame against the 'FutureSlope' column. This is useful for identifying relationships between variables and identifying potential predictors of the 'FutureSlope' column. The code can be modified as per the requirements of the user. Dropped NAs, set y as the Signal, then review the value counts.
+-The next block of code is a 'for' loop that iterates through each column in 'lstColumns'.
+
+-Within the loop, the 'hvplot.scatter()' function is used to create a scatter plot of the column against the 'FutureSlope' column.
+
+-The 'dfopt' DataFrame is then assigned with two columns - 'FutureSlope' and the current column from 'lstColumns'.
+
+-The correlation between these two columns is calculated using the 'corr()' method and is displayed using the 'display()' function.
+
+-The code essentially generates scatter plots and correlation values for each column in the DataFrame against the 'FutureSlope' column. This is useful for identifying relationships between variables and identifying potential predictors of the 'FutureSlope' column. The code can be modified as per the requirements of the user. Dropped NAs, set y as the Signal, then review the value counts.
+
  
  ## Machine Learning-Support Vector Machine:
  
