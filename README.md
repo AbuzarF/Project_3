@@ -214,7 +214,7 @@ The strategy is a dual moving average crossover , calculates various portfolio m
 
 ![XLK Signals]()
 
-![XLK Equity]()
+![XLK Equity](https://github.com/AbuzarF/Project_3/blob/patch-1/Stoc-Images/XLK%20Equity.png)
 
 The code also calculates the Y value for each row in the dataframe. The Y value is based on the mid-price of the high and low price of the stock. If the Y value is greater than 0, it is set to 1, otherwise, it is set to 0. The code also calculates the MA14Slope and ZScore14 values for the stock.
 
