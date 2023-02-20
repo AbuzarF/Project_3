@@ -262,4 +262,6 @@ Finally, it calculates and plots the cumulative returns for both actual_returns 
 
 ![XLK SVM]()
 
+![Dollar Euity](https://github.com/AbuzarF/Project_3/blob/patch-1/Stoc-Images/DOLLAR%20Equity.png)
+
 
